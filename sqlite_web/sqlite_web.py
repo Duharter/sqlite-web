@@ -680,7 +680,6 @@ def get_query_images():
 def _general():
     return {
         'dataset': dataset,
-        'login_required': bool(app.config.get('PASSWORD')),
     }
 
 @app.context_processor
@@ -823,7 +822,7 @@ def main():
     if not args:
         die('Error: missing required path to database file.')
 
-    password = None
+    password = ""
     if options.prompt_password:
         if os.environ.get('SQLITE_WEB_PASSWORD'):
             password = os.environ['SQLITE_WEB_PASSWORD']
