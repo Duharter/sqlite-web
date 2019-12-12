@@ -37,11 +37,6 @@
         <div class="page-header">
           {% block content_header %}
             {% if not dataset.is_readonly %}
-            <form action="{{ url_for('table_create') }}" class="form-inline float-right" method="post" style="margin-top: 10px;">
-              <input name="redirect" type="hidden" value="{{ request.path }}" />
-              <input class="form-control form-control-sm" name="table_name" placeholder="new_table_name" />
-              <button class="btn btn-primary btn-sm" type="submit">Create</button>
-            </form>
             {% endif %}
           {% endblock %}
           <h1>{% block content_title %}{% endblock %}</h1>
@@ -66,11 +61,6 @@
         <div class="col-9 offset-3">
           <footer>
             <hr />
-            <p>
-              Web-based SQLite database browser, powered by
-              <a href="http://flask.pocoo.org/">Flask</a> and <a href="http://docs.peewee-orm.com/">Peewee</a>.
-              &copy; {{ now.year }} <a href="http://charlesleifer.com/">Charles Leifer</a>
-            </p>
           </footer>
         </div>
       </div>
